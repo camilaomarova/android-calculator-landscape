@@ -21,7 +21,6 @@
         android:maxLines="2"
         android:maxLength="17"
         android:layout_height="80dp"
-        android:freezesText="true"
         />
 
     <Button

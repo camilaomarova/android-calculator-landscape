@@ -24,6 +24,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         _screen = (TextView)findViewById(R.id.textView2);
         _screen.setText(display);
+
+
+        if (savedInstanceState != null){
+            result = savedInstanceState.getString("result");
+            currentOperator = savedInstanceState.getString("currentOperator");
+            display = savedInstanceState.getString("display");
+//            Log.d("String", str);
+            _screen.setText(result);
+        }
+
+
     }
 
 
@@ -121,5 +132,11 @@ public class MainActivity extends AppCompatActivity {
         _screen.setText(display + "\n" + String.valueOf(result));
     }
 
-
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putString("result", _screen.getText().toString());
+        outState.putString("currentOperator", currentOperator);
+        outState.putString("display", display);
+        super.onSaveInstanceState(outState);
+    }
 }

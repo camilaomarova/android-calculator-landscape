@@ -21,7 +21,6 @@
         android:gravity="bottom|right"
         android:maxLines="2"
         android:maxLength="17"
-        android:freezesText="true"
         />
 
     <Button
